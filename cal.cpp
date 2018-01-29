@@ -73,6 +73,7 @@ int  ChangeFormat(char* format) //将中缀表达式转为逆波兰后缀表达�
 					if(CharStack.empty())
 					{
 						cout<<"非法输入"<<endl;
+						return 0;
 					}
 				}
 				CharStack.pop();
