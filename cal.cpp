@@ -165,11 +165,15 @@ int main(){  //主函数
   Start();
   char cmd;
   cmdMenu();
-  while(cin>>cmd && cmd!='F'){  //输入命令 当命令不为'F'时执行下面操作，为'F'则退出程序
+  while(cin>>cmd && (cmd!='F'||cmd!= 'f')){  //输入命令 当命令不为'F'时执行下面操作，为'F'则退出程序
 	switch(cmd){
-	 	case 'A':Store();
+	 	case 'A':
+		case 'a':
+			Store();
 			break;
-		case 'C':Clean();
+		case 'C':
+		case 'c':
+			Clean();
 			break;
 		default:
 			cout<<"错误命令!请重新输入"<<endl;
