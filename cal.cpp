@@ -165,7 +165,7 @@ int main(){  //主函数
   Start();
   char cmd;
   cmdMenu();
-  while(cin>>cmd && (cmd!='F'||cmd!= 'f')){  //输入命令 当命令不为'F'时执行下面操作，为'F'则退出程序
+  while(cin>>cmd && cmd!='F' && cmd!= 'f'){  //输入命令 当命令不为'F'时执行下面操作，为'F'则退出程序
 	switch(cmd){
 	 	case 'A':
 		case 'a':
