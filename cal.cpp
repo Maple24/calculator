@@ -18,6 +18,7 @@ int pre(char flag){  //运算符优先级
 	return -1;
   }
 }
+
 void Calculate(){ //单步计算 
   float negative = NumStack.top();
   float positive;
@@ -45,6 +46,7 @@ void Calculate(){ //单步计算
   }
   CharStack.pop();
 }
+
 
 int  ChangeFormat(char* format) //将中缀表达式转为逆波兰后缀表达式
 {
