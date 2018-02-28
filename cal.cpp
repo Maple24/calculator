@@ -50,7 +50,7 @@ int  ChangeFormat(char* format) //将中缀表达式转为逆波兰后缀表达�
 {
   for(int i = 0;format[i]!='=';i++)
   {
-	if (format[i+1] == '\0' && format[i]!='=')
+	if(format[strlen(format)-1]!='=')
 	{
 		cout<<"请以等号结尾"<<endl;
 		return 0;
