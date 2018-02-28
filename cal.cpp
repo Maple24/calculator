@@ -18,6 +18,7 @@ int pre(char flag){  //运算符优先级
 	return -1;
   }
 }
+
 void Calculate(){ //单步计算 
   float negative = NumStack.top();
   float positive;
@@ -46,6 +47,7 @@ void Calculate(){ //单步计算
   CharStack.pop();
 }
 
+
 int  ChangeFormat(char* format) //将中缀表达式转为逆波兰后缀表达式
 {
   for(int i = 0;format[i]!='=';i++)
@@ -64,6 +66,7 @@ int  ChangeFormat(char* format) //将中缀表达式转为逆波兰后缀表达�
 			if(CharStack.empty())
 			{
 				cout<<"非法输入"<<endl;
+				return 0;
 			}
 			else
 			{
@@ -73,6 +76,7 @@ int  ChangeFormat(char* format) //将中缀表达式转为逆波兰后缀表达�
 					if(CharStack.empty())
 					{
 						cout<<"非法输入"<<endl;
+						return 0;
 					}
 				}
 				CharStack.pop();
@@ -165,11 +169,15 @@ int main(){  //主函数
   Start();
   char cmd;
   cmdMenu();
-  while(cin>>cmd && cmd!='F'){  //输入命令 当命令不为'F'时执行下面操作，为'F'则退出程序
+  while(cin>>cmd && cmd!='F' && cmd!= 'f'){  //输入命令 当命令不为'F'时执行下面操作，为'F'则退出程序
 	switch(cmd){
-	 	case 'A':Store();
+	 	case 'A':
+		case 'a':
+			Store();
 			break;
-		case 'C':Clean();
+		case 'C':
+		case 'c':
+			Clean();
 			break;
 		default:
 			cout<<"错误命令!请重新输入"<<endl;
